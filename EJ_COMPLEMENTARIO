@@ -1,0 +1,98 @@
+tipo=[]
+patente=[]
+marca=[]
+precio=[]
+multa_monto=[]
+multa_fecha=[]
+fecha_registro=[]
+nombre_duenio=[]
+x=True
+c=0
+y=0
+
+def menu():
+  print("ingrese 1 si desea grabar un vehiculo")
+  print("ingrese 2 si desea buscar un vehiculo")
+  print("ingrese 3 si desea imprimir los certificados")
+  print("ingrese 4 si desea salir")
+
+def buscar():
+  convalidador=True
+  convalidador2=True
+  convalidador3=True
+
+  tipo.append(input("ingrese el tipo de auto"))
+    
+  while(convalidador==True):
+    
+    patente.append(input("ingrese la patente del auto con un valor de 6 digitos"))
+    if(len(patente[y])==6):
+      convalidador=False
+    else:
+      print("\n\n\nvuelva a ingresar la patente")
+    
+    while(convalidador2==True):
+      marca.append(input("ingrese la marca del auto"))
+      if(len(marca[y])>=2 and len(marca[y])<=15):
+        convalidador2=False
+      else:
+        print("\n\n\nvuelva a ingresar la marca del auto")
+        
+    while(convalidador3==True):
+      precio.append(int(input("ingrese el precio del auto y este debe ser mayor a 5000000: ")))
+      if(precio[y]>=5000000):
+        convalidador3=False
+      else:
+        print("\n\n\nvuelva a ingresar el precio del auto: ")
+
+    multa_monto.append(int(input("ingrese el monto de la multa y si no tiene multa ingrese 0")))
+    multa_fecha.append(input('ingrese la fecha de la multa con "" y si no tiene multa ingrese 0'))
+    
+    fecha_registro.append(input("ingrese la fecha del registro: "))
+    nombre_duenio.append(input("ingrese el nombre del representante legal: "))
+    y=+1
+
+while (x!=False):
+  menu()
+  z=int(input("ingrese su opcion "))  
+  
+  if z==1:
+    buscar()
+
+  if z==2:
+    buscar=input("ingrese la patente a buscar")
+    for i in patente:
+      if i==buscar:
+        print("el tipo de vehiculo es el siguiente: ", tipo[c])
+        print("la patente del vehiculo es: ", patente[c])
+        print("la marca del vehiculo es: ", marca[c])
+        print("el valor del vehiculo es: ", precio[c])
+        
+        if(multa_monto[c]==0 and multa_fecha[c]==0):
+          print("no presenta multas")
+        else:
+          print("el valor de la multa es: ", multa_monto[c])
+          print("la fecha de la multa es: ", multa_fecha[c])
+        
+        print("la fecha de registro es: ", fecha_registro[c])
+        print("el nombre del representante legal es: ", nombre_duenio[c])
+        p=1
+        break
+      else:
+        c+=1
+    if i==len(patente):
+      print("no se encontro su patente")
+      
+  if z==3:
+    valor_certificado.random.randint
+    buscar=input("Ingrese la patente a buscar")
+    for i in patente:
+      if i==buscar:
+       print("el valor del certificado es: " valor_certificado)   
+        
+      
+  if z==4:
+    x=False
+    print("Hasta luego!")
+  else:
+    print("\n\n\nOpcion erronea vuelva a intentar")
